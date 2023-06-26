@@ -72,7 +72,7 @@ window.addEventListener('load',()=>{
     }
 
     function stringifyMask(header, items){
-        return header + '\n' + Object.keys(items).filter(key=>items.hasOwnProperty(key)).reduce((str,key)=>{
+        return header + '\n' + Object.keys(items).filter(key=>items.hasOwnProperty(key)).sort().reduce((str,key)=>{
             return `${str}  - m_Path: ${key}    m_Weight: ${items[key]}\n`;
         },'');
     }
